@@ -129,3 +129,53 @@ Vueインスタンスの変数へアクセスする際は`this.変数名`
         <td>全て許容</td>
     </tr>
 </table>
+
+# Nuxt.js
+
+Vue.jsを用いて開発されているフレームワーク
+SSR/SPA/SSG対応。
+serverMiddlewareという機能を用いて簡単にBFFを導入できる
+(WebAPIとか作れるイメージ)
+
+## 環境構築
+
+https://nuxtjs.org/docs/get-started/installation
+
+`yarn create nuxt-app {アプリ名}`
+
+上記を実行した際、数個の質問に解答する必要がある。内容はプロジェクトによって都度変更する(読めば分かる)
+
+## ディレクトリ解説
+
+```md
+- root
+    - .nuxt
+        - 吐き出されたファイル。基本気にしなくて良い
+    - components
+        - ここにコンポーネントファイルを配置します。命名はキャメルケース
+    - node_modules
+        - モジュールディレクトリ
+    - pages
+        - ページファイルを配置できる。ルーティングはindex.vueを基準に各フォルダー、ページ名で自動的にルーティングしてくれる
+    - static
+        - 加工した画像やfavicon、ファイル名をそのまま利用したい場合はこちらに配置する。
+    - store
+        - https://nuxtjs.org/docs/directory-structure/store/ 公式の解説
+        - https://noumenon-th.net/programming/2019/08/24/nuxt-js-store/ 分かりやすい記事
+        - 状態管理用のディレクトリ
+    - .editorconfig
+    - .eslintcache
+    - .eslintrc.js
+        - eslintの設定ファイル
+    - .gitignore
+    - .prettierignore
+    - .prettierrc
+        - prettierの設定ファイル
+    - jsconfig.json
+        - コンパイルに関しての設定ファイル
+    - nuxt.config.js
+        - サイト全体の設定ファイル
+    - package.json
+    - README.md
+    - yarn.lock
+```
